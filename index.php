@@ -3,6 +3,8 @@
 include 'Bank.php';
 include 'Address.php';
 include 'Account.php';
+include 'ChargingAccount.php';
+include 'InterestAccount.php';
 include 'Customer.php';
 
 $address = new Address();
@@ -23,14 +25,21 @@ $donald->firstname = 'Donald';
 $donald->lastname = 'Duck';
 $donald->address = $address;
 
-$dagobertsAccount = new Account($dagobert);
-$dagobertsAccount->deposit(99999);
+
+$dagobertsAccount = new InterestAccount($dagobert);
 $bank->openAccount($dagobertsAccount);
 
-$donaldsAccount = new Account($donald);
-$donaldsAccount->deposit(50);
+$donaldsAccount = new ChargingAccount($donald);
 $bank->openAccount($donaldsAccount);
 
-$donaldsAccount->transfer(100, $dagobertsAccount);
+$dagobertsAccount->deposit(1000);
+$dagobertsAccount->withdraw(100);
+echo $dagobertsAccount->getBalance() . "\n";
 
-var_dump($bank);
+$donaldsAccount->deposit(1000);
+$donaldsAccount->withdraw(100);
+echo $donaldsAccount->getBalance() . "\n";
+
+
+// $donaldsAccount->transfer(100, $dagobertsAccount);
+// var_dump($bank);

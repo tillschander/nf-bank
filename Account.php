@@ -2,7 +2,7 @@
 
 class Account
 {
-    private $balance = 0;
+    protected $balance = 0;
     private $holder;
 
     public function __construct(Customer $holder)
