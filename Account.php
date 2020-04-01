@@ -1,6 +1,6 @@
 <?php
 
-class Account
+abstract class Account
 {
     protected $balance = 0;
     private $holder;
