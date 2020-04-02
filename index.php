@@ -7,29 +7,30 @@ include 'src/Account/ChargingAccount.php';
 include 'src/Account/InterestAccount.php';
 include 'src/Customer.php';
 
-$address = new Address();
+use NeueFische\Account;
+
+$address = new NeueFische\Address();
 $address->street = 'Am Geldspeicher 1';
 $address->city = 'Entenhausen';
 
-$bank = new Bank();
+$bank = new NeueFische\Bank();
 $bank->name = 'Geldspeicher';
 $bank->address = $address;
 
-$dagobert = new Customer();
+$dagobert = new NeueFische\Customer();
 $dagobert->firstname = 'Dagobert';
 $dagobert->lastname = 'Duck';
 $dagobert->address = $address;
 
-$donald = new Customer();
+$donald = new NeueFische\Customer();
 $donald->firstname = 'Donald';
 $donald->lastname = 'Duck';
 $donald->address = $address;
 
-
-$dagobertsAccount = new InterestAccount($dagobert);
+$dagobertsAccount = new Account\InterestAccount($dagobert);
 $bank->openAccount($dagobertsAccount);
 
-$donaldsAccount = new ChargingAccount($donald);
+$donaldsAccount = new Account\ChargingAccount($donald);
 $bank->openAccount($donaldsAccount);
 
 $dagobertsAccount->deposit(1000);
