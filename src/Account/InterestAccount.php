@@ -1,6 +1,8 @@
 <?php
 
-class InterestAccount extends Account
+namespace NeueFische\Account;
+
+class InterestAccount extends \NeueFische\Account
 {
     private static $interest = 1.02;
 

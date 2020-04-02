@@ -1,5 +1,7 @@
 <?php
 
+namespace NeueFische;
+
 abstract class Account
 {
     protected $balance = 0;

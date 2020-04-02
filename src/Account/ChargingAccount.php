@@ -1,6 +1,8 @@
 <?php
 
-class ChargingAccount extends Account
+namespace NeueFische\Account;
+
+class ChargingAccount extends \NeueFische\Account
 {
     private static $fee = 1.02;
 
