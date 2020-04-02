@@ -1,11 +1,11 @@
 <?php
 
-include 'Bank.php';
-include 'Address.php';
-include 'Account.php';
-include 'ChargingAccount.php';
-include 'InterestAccount.php';
-include 'Customer.php';
+include 'src/Bank.php';
+include 'src/Address.php';
+include 'src/Account.php';
+include 'src/Account/ChargingAccount.php';
+include 'src/Account/InterestAccount.php';
+include 'src/Customer.php';
 
 $address = new Address();
 $address->street = 'Am Geldspeicher 1';
